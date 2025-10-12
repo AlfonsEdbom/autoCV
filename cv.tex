@@ -114,13 +114,12 @@
     \textbf{#1} & \hfill &  #2 \\[3.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    \begin{itemize}[nosep,after=\strut,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt,label=\textbullet]
     }
     {
     \end{itemize}
     \end{minipage}    
     }
-
 
 
 %----------------------------------------------------------------------------------------
@@ -142,12 +141,11 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Alfons Edbom Devall} \\[7.5pt]
+\href{https://github.com/AlfonsEdbom}{\raisebox{-0.05\height}\faGithub\ AlfonsEdbom} \ $|$ \ 
+\href{https://linkedin.com/in/alfons-edbdev}{\raisebox{-0.05\height}\faLinkedin\ alfons-edbdev} \ $|$ \ 
+\href{mailto:alfons98@live.com}{\raisebox{-0.05\height}\faEnvelope \ alfons98@live.com} \ $|$ \ 
+\href{tel:+46702748994}{\raisebox{-0.05\height}\faMobile \ +46 70 274 89 94} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -155,43 +153,61 @@
 %----------------------------------------------------------------------------------------
 
 %Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+% \section{Summary}
+% This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
 
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Bioinformatician \textbar \vspace{0.5em}  Alba Health} & \hfill Oct 2023 - present \\[1.5pt]
+\multicolumn{2}{@{}X@{}}{%
+  \begin{itemize}[label=\textbullet,nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+    \item Built and maintained the Pipeline and Data analysis used for processing all customer's metagenomic samples
+    \item The only Bioinformatician / Biologist on-site, responsible for scientific aspects of the product
+    \item Expanded the servicable age range of the product from 1 year up to adulthood.
+  \end{itemize}
+} \\[3pt]
 
+\textbf{Process operator \textbar \vspace{0.5em}  Volvo} & \hfill Summer 2022 \\[1.5pt]
+\multicolumn{2}{@{}X@{}}{Monitored industrial process for producing truck spare parts}  \\[3pt]
 
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
+\textbf{Process operator \textbar \vspace{0.5em}  Nouryon} & \hfill Summer 2020 \& 2021 \\[1.5pt]
+\multicolumn{2}{@{}X@{}}{Monitored of process for producing micro-spheres}  \\[3pt]
+
+\textbf{Cleaning Service \textbar \vspace{0.5em}  Sundsvall Municipality} & \hfill Aug 2017 - Jul 2018 \\[1.5pt]
+\multicolumn{2}{@{}X@{}}{No day of absence during the entire period of employment}  \\[3pt]
+
+\end{tabularx}
+
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+\textbf{Gut Microbiome and Perinatal Depression} & \hfill\\[3pt]
+\multicolumn{2}{@{}X@{}}{Investigated the association between the gut microbiome and perinatal depression. Using metagenomic tools for data processing and doing statistical analysis.}  \\[3pt]
 
+\textbf{PCR-Primer} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github Link} \\[1.5pt]
+\multicolumn{2}{@{}X@{}}{Developed own program with associated interface to identify uniquely binding primers, given a user-defined genome}  \\[3pt]
+
+\textbf{Brain Game} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github Link} \\ [1.5pt]
+\multicolumn{2}{@{}X@{}}{Created a game controlled by brain waves. Responsible for integrating servo-motor functionality and data filtering of brain waves}  \\[3pt]
+
+\end{tabularx}
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+\begin{jobshort}{Master of Science in Biotechnology at \textbf{Umeå University}}{2018 - 2023}
+\end{jobshort}
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[label=\textbullet, nosep, leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+\item Masters in Bioinformatics
+\item Highest possible grade in 16/22 courses
+\item Second highest possible grade in 5/22 courses
+\end{itemize}
+\end{minipage}\\[3.75pt]
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
@@ -207,11 +223,12 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Personal Traits  &  \normalsize{Team player, Problem Solver, Curious, Analytical, Methodical}\\
+Technical Skills &  \normalsize{Python, R, Bash, SQL, git, AWS, Snakemake, Nextflow}\\
+  
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
+% \center{\footnotesize Last updated: \today}
 
 \end{document}
