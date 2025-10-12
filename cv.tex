@@ -54,7 +54,9 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[scale=0.92]{geometry}
+\setlength{\parskip}{0pt}
+%\titlespacing{\section}{0pt}{8pt}{8pt}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -79,8 +81,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
+\titlespacing{\section}{0pt}{8pt}{6pt} 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
 
@@ -160,23 +161,21 @@
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Bioinformatician \textbar \vspace{0.5em}  Alba Health} & \hfill Oct 2023 - present \\[1.5pt]
+\textbf{Bioinformatician \textbar\ Alba Health} & \hfill Oct 2023 - present \\[0pt]
 \multicolumn{2}{@{}X@{}}{%
-  \begin{itemize}[label=\textbullet,nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
-    \item Built and maintained the Pipeline and Data analysis used for processing all customer's metagenomic samples
-    \item The only Bioinformatician / Biologist on-site, responsible for scientific aspects of the product
-    \item Expanded the servicable age range of the product from 1 year up to adulthood.
+  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+    \item Architected and maintained automated metagenomic processing pipeline handling more than 100 customer samples/month, enabling production scalability
+    \item Owned the development and implementation of 5 new features for our production product, improving user experience and expanding functionality.
+    \item Expanded the servicable age range of the product from 1 year up to adulthood, by leading, and implementing the validation and integration of new reference data in 3 stages.
+    \item Resolved critical customer escalations, maintaining high satisfaction rates while translating complex bioinformatics and scientific findings for non-technical customers
   \end{itemize}
-} \\[3pt]
+} \\[1.5pt]
 
-\textbf{Process operator \textbar \vspace{0.5em}  Volvo} & \hfill Summer 2022 \\[1.5pt]
-\multicolumn{2}{@{}X@{}}{Monitored industrial process for producing truck spare parts}  \\[3pt]
+\textbf{Process Operator \textbar\ Volvo, Nouryon} & \hfill Summer 2020-2022 \\[0pt]
+\multicolumn{2}{@{}X@{}}{Monitored industrial processes for manufacturing operations}  \\[1.5pt]
 
-\textbf{Process operator \textbar \vspace{0.5em}  Nouryon} & \hfill Summer 2020 \& 2021 \\[1.5pt]
-\multicolumn{2}{@{}X@{}}{Monitored of process for producing micro-spheres}  \\[3pt]
-
-\textbf{Cleaning Service \textbar \vspace{0.5em}  Sundsvall Municipality} & \hfill Aug 2017 - Jul 2018 \\[1.5pt]
-\multicolumn{2}{@{}X@{}}{No day of absence during the entire period of employment}  \\[3pt]
+\textbf{Cleaning Service \textbar\ Sundsvall Municipality} & \hfill Aug 2017 - Jul 2018 \\[0pt]
+\multicolumn{2}{@{}X@{}}{No day of absence during the entire period of employment}  \\[1.5pt]
 
 \end{tabularx}
 
@@ -184,14 +183,33 @@
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Gut Microbiome and Perinatal Depression} & \hfill\\[3pt]
-\multicolumn{2}{@{}X@{}}{Investigated the association between the gut microbiome and perinatal depression. Using metagenomic tools for data processing and doing statistical analysis.}  \\[3pt]
+\textbf{Gut Microbiome and Perinatal Depression \textbar\ Master's Thesis} & \hfill\\[1.5pt]
+\multicolumn{2}{@{}X@{}}{%
+  \begin{minipage}[t]{\linewidth}
+  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+    \item Investigated gut microbiome-depression associations using shotgun metagenomic data from U.S. and Swedish cohorts; published as first author
+    \item Performed taxonomic profiling (MetaPhlAn4), functional annotation (HUMAnN3), and statistical analyses in R
+  \end{itemize}
+  \end{minipage}
+}  \\[4pt]
 
-\textbf{PCR-Primer} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github Link} \\[1.5pt]
-\multicolumn{2}{@{}X@{}}{Developed own program with associated interface to identify uniquely binding primers, given a user-defined genome}  \\[3pt]
+\textbf{PCR-Primer Design Tool} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github} \\[1.5pt]
+\multicolumn{2}{@{}X@{}}{%
+  \begin{minipage}[t]{\linewidth}
+  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+    \item Python tool with GUI for automated PCR primer design and specificity validation of all potential primer pairs
+  \end{itemize}
+  \end{minipage}
+}  \\[4pt]
 
-\textbf{Brain Game} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github Link} \\ [1.5pt]
-\multicolumn{2}{@{}X@{}}{Created a game controlled by brain waves. Responsible for integrating servo-motor functionality and data filtering of brain waves}  \\[3pt]
+\textbf{EEG-Controlled Brain Game} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/brain-game}{Github} \\ [1.5pt]
+\multicolumn{2}{@{}X@{}}{%
+  \begin{minipage}[t]{\linewidth}
+  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+    \item Brain-computer interface integrating real-time FFT signal processing with Arduino servo motor control
+  \end{itemize}
+  \end{minipage}
+}  \\[1.5pt]
 
 \end{tabularx}
 %----------------------------------------------------------------------------------------
@@ -203,8 +221,7 @@
 \begin{minipage}[t]{\linewidth}
 \begin{itemize}[label=\textbullet, nosep, leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
 \item Masters in Bioinformatics
-\item Highest possible grade in 16/22 courses
-\item Second highest possible grade in 5/22 courses
+\item Highest possible grade in 16/22 courses. Second highest possible grade in 5/22 courses
 \end{itemize}
 \end{minipage}\\[3.75pt]
 
@@ -222,13 +239,22 @@
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Personal Traits  &  \normalsize{Team player, Problem Solver, Curious, Analytical, Methodical}\\
-Technical Skills &  \normalsize{Python, R, Bash, SQL, git, AWS, Snakemake, Nextflow}\\
-  
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Technical Skills} & \hfill \\[0pt]
+\multicolumn{2}{@{}X@{}}{%
+  \normalsize
+  \textbf{Languages \& Tools:} Python, R, Bash, SQL, git, Docker, Conda; 
+  \textbf{Cloud:} AWS (S3, EC2, Batch); 
+  \textbf{Workflow:} Snakemake, Nextflow; 
+  \textbf{Metagenomics:} MetaPhlAn, MEGAHIT, HUMAnN, QIIME2, phyloseq, vegan, ANCOM-BC; 
+  \textbf{Sequence Analysis:} FastQC, BWA, Bowtie2, SAMtools, BBTools
+} \\[1.5pt]
+
+\textbf{Personal Traits} & \hfill \\[0pt]
+\multicolumn{2}{@{}X@{}}{\normalsize Team player, Problem Solver, Curious, Analytical, Methodical} \\[1.5pt]
 \end{tabularx}
 
 \vfill
-% \center{\footnotesize Last updated: \today}
+%\center{\footnotesize Last updated: \today}
 
 \end{document}
