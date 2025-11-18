@@ -53,10 +53,9 @@
 %other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[scale=0.92]{geometry}
 \setlength{\parskip}{0pt}
-%\titlespacing{\section}{0pt}{8pt}{8pt}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -82,6 +81,7 @@
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{8pt}{6pt} 
+
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
 
@@ -98,30 +98,37 @@
 %debug page outer frames
 %\usepackage{showframe}
 
+%----------------------------------------------------------------------------------------
+%	CUSTOM ENVIRONMENTS
+%----------------------------------------------------------------------------------------
 
-% job listing environments
-\newenvironment{jobshort}[2]
+% Unified CV entry environment for all sections
+\newenvironment{cventry}[3]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \textbf{#1} & \hfill & #2 \\[3.75pt]
     \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
+    \vspace{-10pt}
+    #3
     \begin{itemize}[nosep,after=\strut,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt,label=\textbullet]
     }
     {
     \end{itemize}
-    \end{minipage}    
+    \vspace{3pt}
     }
 
+% Simple entry without bullets (for brief descriptions)
+\newenvironment{cventrysimple}[3]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill & #2 \\[3.75pt]
+    \end{tabularx}
+    \vspace{-2pt}
+    #3
+    \vspace{3pt}
+    }
+    {
+    }
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -135,12 +142,6 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Alfons Edbom Devall} \\[7.5pt]
 \href{https://github.com/AlfonsEdbom}{\raisebox{-0.05\height}\faGithub\ AlfonsEdbom} \ $|$ \ 
@@ -153,78 +154,57 @@
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-% \section{Summary}
-% This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
 %Experience
 \section{Work Experience}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Bioinformatician \textbar\ Alba Health} & \hfill Oct 2023 - present \\[0pt]
-\multicolumn{2}{@{}X@{}}{%
-  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+\begin{cventry}{Bioinformatician \textbar\ Alba Health}{Oct 2023 - present}{}
     \item Architected and maintained automated metagenomic processing pipeline handling more than 100 customer samples/month, enabling production scalability
-    \item Owned the development and implementation of 5 new features for our production product, improving user experience and expanding functionality.
-    \item Expanded the servicable age range of the product from 1 year up to adulthood, by leading, and implementing the validation and integration of new reference data in 3 stages.
+    \item Owned the development and implementation of 5 new features for our production product, improving user experience and expanding functionality
+    \item Expanded the servicable age range of the product from 1 year up to adulthood, by leading, and implementing the validation and integration of new reference data in 3 stages
     \item Resolved critical customer escalations, maintaining high satisfaction rates while translating complex bioinformatics and scientific findings for non-technical customers
-  \end{itemize}
-} \\[1.5pt]
+\end{cventry}
 
-\textbf{Process Operator \textbar\ Volvo, Nouryon} & \hfill Summer 2020-2022 \\[0pt]
-\multicolumn{2}{@{}X@{}}{Monitored industrial processes for manufacturing operations}  \\[1.5pt]
+%\begin{cventrysimple}{Laboratory Assistant \textbar\ SCA}{Summer 2016 - Summer 2016}{Collected and analyzed samples from saplings to monitor growth and health of plants}
+%\end{cventrysimple}
 
-\textbf{Cleaning Service \textbar\ Sundsvall Municipality} & \hfill Aug 2017 - Jul 2018 \\[0pt]
-\multicolumn{2}{@{}X@{}}{No day of absence during the entire period of employment}  \\[1.5pt]
+%\begin{cventrysimple}{Process Operator \textbar\ Volvo, Nouryon}{Summer 2020-2022}{Monitored industrial processes for manufacturing operations}
+%\end{cventrysimple}
 
-\end{tabularx}
+%\begin{cventrysimple}{Cleaning Service \textbar\ Sundsvall Municipality}{Aug 2017 - Jul 2018}{No day of absence during the entire period of employment}
+%\end{cventrysimple}
 
 %Projects
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Gut Microbiome and Perinatal Depression \textbar\ Master's Thesis} & \hfill\\[1.5pt]
-\multicolumn{2}{@{}X@{}}{%
-  \begin{minipage}[t]{\linewidth}
-  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
-    \item Investigated gut microbiome-depression associations using shotgun metagenomic data from U.S. and Swedish cohorts; published as first author
+\begin{cventry}{Gut Microbiome and Perinatal Depression \textbar\ Master's Thesis}{}{}
+    \item Investigated gut microbiome-depression associations using shotgun metagenomic data from U.S. and Swedish cohorts; published as co-author
     \item Performed taxonomic profiling (MetaPhlAn4), functional annotation (HUMAnN3), and statistical analyses in R
-  \end{itemize}
-  \end{minipage}
-}  \\[4pt]
+\end{cventry}
 
-\textbf{PCR-Primer Design Tool} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github} \\[1.5pt]
-\multicolumn{2}{@{}X@{}}{%
-  \begin{minipage}[t]{\linewidth}
-  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
+\begin{cventry}{EEG-Controlled Brain Game}{\href{https://github.com/AlfonsEdbom/University-Code/tree/main/brain-game}{Github}}{}
+    \item Developed brain-computer interface game integrating EEG signals with physical servo motor control
+    \item Implemented real-time FFT-based signal processing for alpha/beta wave detection
+\end{cventry}
+
+\begin{cventry}{PCR-Primer Design Tool}{\href{https://github.com/AlfonsEdbom/University-Code/tree/main/PCR-primer}{Github}}{}
     \item Python tool with GUI for automated PCR primer design and specificity validation of all potential primer pairs
-  \end{itemize}
-  \end{minipage}
-}  \\[4pt]
+\end{cventry}
 
-\textbf{EEG-Controlled Brain Game} & \hfill \href{https://github.com/AlfonsEdbom/University-Code/tree/main/brain-game}{Github} \\ [1.5pt]
-\multicolumn{2}{@{}X@{}}{%
-  \begin{minipage}[t]{\linewidth}
-  \begin{itemize}[nosep,leftmargin=1em,itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt]
-    \item Brain-computer interface integrating real-time FFT signal processing with Arduino servo motor control
-  \end{itemize}
-  \end{minipage}
-}  \\[1.5pt]
+%\begin{cventry}{Quorum Sensing}{}{}
+%    \item Designed and carried out laboratory experiment to study bacterial communication via quorum sensing using lacZ reporter system
+%\end{cventry}
 
-\end{tabularx}
+
+
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{jobshort}{Master of Science in Biotechnology at \textbf{Umeå University}}{2018 - 2023}
-\end{jobshort}
-\begin{minipage}[t]{\linewidth}
-\begin{itemize}[label=\textbullet, nosep, leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
-\item Masters in Bioinformatics
-\item Highest possible grade in 16/22 courses. Second highest possible grade in 5/22 courses
-\end{itemize}
-\end{minipage}\\[3.75pt]
 
+\begin{cventry}{Master of Science in Biotechnology at \textbf{Umeå University}}{2018 - 2023}{}
+    \item Masters in Bioinformatics
+    %\item Highest possible grade in 16/22 courses. Second highest possible grade in 5/22 courses
+\end{cventry}
 
 %----------------------------------------------------------------------------------------
 %	PUBLICATIONS
@@ -238,23 +218,24 @@
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Technical Skills} & \hfill \\[0pt]
-\multicolumn{2}{@{}X@{}}{%
-  \normalsize
-  \textbf{Languages \& Tools:} Python, R, Bash, SQL, git, Docker, Conda; 
-  \textbf{Cloud:} AWS (S3, EC2, Batch); 
-  \textbf{Workflow:} Snakemake, Nextflow; 
-  \textbf{Metagenomics:} MetaPhlAn, MEGAHIT, HUMAnN, QIIME2, phyloseq, vegan, ANCOM-BC; 
-  \textbf{Sequence Analysis:} FastQC, BWA, Bowtie2, SAMtools, BBTools
-} \\[1.5pt]
+ \section{Technical \& Personal Strengths }
+ \textbf{Technical Skills}
+ \begin{itemize}[nosep,leftmargin=1em,itemsep=2pt,parsep=0pt,topsep=2pt,label=\textbullet]
+     \item \textbf{Languages \& Tools:} Python, R, Bash, SQL, git, Docker, Conda
+     \item \textbf{Cloud Platforms:} AWS (S3, EC2, Batch)
+     \item \textbf{Workflow Management:} Snakemake, Nextflow
+     \item \textbf{Metagenomics:} MetaPhlAn, MEGAHIT, HUMAnN, QIIME2, phyloseq, vegan, ANCOM-BC
+     \item \textbf{Sequence Analysis:} FastQC, BWA, Bowtie2, SAMtools, BBTools
+ \end{itemize}
 
-\textbf{Personal Traits} & \hfill \\[0pt]
-\multicolumn{2}{@{}X@{}}{\normalsize Team player, Problem Solver, Curious, Analytical, Methodical} \\[1.5pt]
-\end{tabularx}
+ \vspace{6pt}
+
+ \textbf{Personal Strengths}
+
+ \vspace{2pt}
+ Team player \textbullet\ Problem solver \textbullet\ Curious \textbullet\ Analytical \textbullet\ Methodical
 
 \vfill
-%\center{\footnotesize Last updated: \today}
+% \center{\footnotesize Last updated: \today}
 
 \end{document}
